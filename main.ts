@@ -1,4 +1,6 @@
-// import { serve } from "./deps.ts"
+// import { testEsbuild } from "./deps.ts"
+
+// await testEsbuild()
 
 import {
     // stdHandler,
