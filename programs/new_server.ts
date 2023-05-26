@@ -14,7 +14,7 @@ function usage() {
 `
 deno run --allow-write programs/new_server.ts <file_name> <handler_type> <port_number>
 where:
-        file_name - file name of the server to be created
+        file_name - file name of the server to be created (beware of folder paths!)
         handler_type - either native or std
         port_number - obvious
 
@@ -31,7 +31,7 @@ async function main(args = Deno.args) {
 
     const handlerType: 'native' | 'std' | string = args[1]
     const settings = {
-        port: args[2],
+        port: Number(args[2]),
     }
     const handlerImportName = `${handlerType}Handler`
     const type = handlerImportName === 'stdHandler' ? 'std' : 'native'
@@ -40,7 +40,7 @@ async function main(args = Deno.args) {
 `${type == 'std' ? 'import { serve } from "../deps.ts"\n' : ''}import { ${handlerImportName} } from '../regular.ts'
 
 const settings = {
-    port: ${settings.port},
+    port: ${settings.port || 65000} /* will be a random thing */,
 }
 
 const mode_env = Deno.env.get('_MODE'),

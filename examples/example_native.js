@@ -1,7 +1,7 @@
 import { nativeHandler } from '../regular.ts'
 
 const settings = {
-    port: 4000,
+    port: 65000 /* will be a random thing */,
 }
 
 const mode_env = Deno.env.get('_MODE'),

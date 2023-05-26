@@ -2,7 +2,7 @@ import { serve } from "../deps.ts"
 import { stdHandler } from '../regular.ts'
 
 const settings = {
-    port: 5000,
+    port: 65000 /* will be a random thing */,
 }
 
 const mode_env = Deno.env.get('_MODE'),

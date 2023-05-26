@@ -22,3 +22,11 @@ You need to have Deno enabled in your IDE.
 <!-- - Other IDE:
   * ???
   * PROFIT!!! -->
+
+### Note about running script
+
+Most of the time you will run scripts from the root project folder, so be aware that there is a need to be explicit in the folders most of the time.
+
+For example, when generating new server:
+
+`deno run --allow-write programs/new_server.ts examples/your_server.ts std 0`
